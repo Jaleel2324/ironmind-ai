@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #60a5fa;
+  --secondary: #c0c0c0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000000;
+  color: white;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BLUE GLOW */
+
+.blue-glow {
+  box-shadow:
+    0 0 20px rgba(96, 165, 250, 0.25),
+    0 0 40px rgba(96, 165, 250, 0.15);
+}
+
+/* SILVER BORDER */
+
+.silver-border {
+  border: 1px solid rgba(192, 192, 192, 0.15);
+}
+
+/* METALLIC GRADIENT */
+
+.silver-gradient {
+  background: linear-gradient(
+    135deg,
+    #d9d9d9,
+    #9ca3af,
+    #e5e7eb
+  );
+}
+
+/* BLUE GRID */
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(96,165,250,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(96,165,250,0.05) 1px, transparent 1px);
+
+  background-size: 50px 50px;
+}
+
+/* GLASS PANEL */
+
+.glass-panel {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* TEXT STYLING */
+
+.silver-text {
+  color: #d1d5db;
+}
+
+.blue-text {
+  color: #60a5fa;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+}
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -120%;
+  width: 250%;
+  height: 250%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+
+  transform: rotate(25deg);
+  transition: 0.8s;
+}
+
+.card-shine:hover::before {
+  top: -20%;
+  left: -20%;
+}
+.cinematic-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.section-fade-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(to bottom, #000, transparent);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.section-fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(to top, #000, transparent);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+  color: transparent;
+}
+.home-cinematic {
+  scroll-snap-type: y proximity;
+}
+
+.home-cinematic > section {
+  scroll-snap-align: start;
+}
